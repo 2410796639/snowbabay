@@ -30,6 +30,7 @@ public:
     int blackcage;
     int sec=0;
     int badpignumber=0;
+
     struct node
     {
         int pigsum=0;
@@ -66,7 +67,7 @@ private slots:
     void on_design_clicked();
     void on_buy_sell_clicked();
 
- //   void on_pushButton_3_clicked();
+    void on_pushButton_3_clicked();
 };
 
 

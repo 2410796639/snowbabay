@@ -3,6 +3,7 @@
 
 #include <QWidget>
 #include <QPainter>
+#include <QCloseEvent>
 #include "subwidget.h"
 class Widget : public QWidget
 {

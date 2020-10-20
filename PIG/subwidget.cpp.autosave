@@ -770,7 +770,7 @@ void subwidget::on_buy_sell_clicked()
 }
 
 
-
+//采取猪瘟防控措施
 void subwidget::on_pushButton_3_clicked()
 {
     for(int i=0;i<100;i++)

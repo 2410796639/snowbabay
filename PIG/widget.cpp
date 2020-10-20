@@ -7,9 +7,12 @@
 #include <QtGlobal>
 #include <QTime>
 #include <QDebug>
+#include <QApplication>
+#include <QCloseEvent>
 Widget::Widget(QWidget *parent)
     : QWidget(parent)
 {
+
     //设置窗口大小
     resize(600,300);
     //设置窗口3个选项按钮
@@ -235,13 +238,7 @@ void Widget::changewin()
             }
         }
 
-       qsrand(QTime(0,0,0).secsTo(QTime::currentTime()));
-        int a=qrand()%100;
-        int b=qrand()%6;
-        w.pigcage[a].pigpen[b].infection=true;
-        w.pigcage[a].pigpen[b].infec="是";
-        w.pigcage[a].infection=true;
-        qDebug()<<a<<b;
+
     this->hide();
 
     w.show();

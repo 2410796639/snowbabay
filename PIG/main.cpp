@@ -19,12 +19,15 @@
 */
 #include "widget.h"
 #include <QApplication>
-
+#include <QCloseEvent>
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
-    Widget w;
-    w.show();
+    //a.connect(&a,SIGNAL(lastWindowClosed()),&a,SLOT(quit()));
 
+    Widget w;
+
+    w.show();
+    //w.setAttribute(&QWidget::WA_QuitOnClose,true);
     return a.exec();
 }
