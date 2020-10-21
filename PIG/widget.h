@@ -4,6 +4,7 @@
 #include <QWidget>
 #include <QPainter>
 #include <QCloseEvent>
+#include <QSound>
 #include "subwidget.h"
 class Widget : public QWidget
 {

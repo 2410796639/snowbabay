@@ -9,6 +9,7 @@
 #include <QDebug>
 #include <QApplication>
 #include <QCloseEvent>
+#include <QSound>
 Widget::Widget(QWidget *parent)
     : QWidget(parent)
 {
@@ -38,8 +39,9 @@ Widget::Widget(QWidget *parent)
     connect((p+1),&QPushButton::clicked,
             [=]()
     {
+        w.music_on();
         //判断是否有存档
-        QFile judge_file("D:/QTcode/PIG/pig_information.txt");
+        QFile judge_file("../PIG/pig_information.txt");
             if(judge_file.exists()==true)
             {
                 //读取存档信息
@@ -85,11 +87,12 @@ Widget::Widget(QWidget *parent)
                         if(ss=='0')
                         {
                             w.pigcage[i].pigpen[j].blank=true;
-                            w.pigcage[i].pigsum++;
+
                             continue;
                         }
                         else{
                             w.pigcage[i].pigpen[j].blank=false;
+
                         for(int k=0;k<ss.length();k++)
                         {
 
@@ -106,15 +109,18 @@ Widget::Widget(QWidget *parent)
                                     {
                                         w.pigcage[i].blacksum++;
                                         w.pigcage[i].blackpig=true;
+                                        w.pigcage[i].pigsum++;
                                     }else if(str=="白猪")
                                     {
                                         w.pigcage[i].whitesum++;
                                         w.pigcage[i].blackpig=false;
+                                        w.pigcage[i].pigsum++;
 
                                     }else if(str=="花猪")
                                     {
                                         w.pigcage[i].flowersum++;
                                         w.pigcage[i].blackpig=false;
+                                        w.pigcage[i].pigsum++;
                                     }
                                     str.clear();
                                 }else if(blankcount==2)
@@ -140,7 +146,8 @@ Widget::Widget(QWidget *parent)
                 }
                 judge_file.close();
             }
-            w.timerID=startTimer(100);
+
+            w.timerID=startTimer(1000);
                 this->hide();
                 w.show();
     });
@@ -159,16 +166,18 @@ void Widget::paintEvent(QPaintEvent *)
 
 void Widget::changewin()
 {
-    QFile judge_file("D:/QTcode/PIG/buy_sell.txt");
+    w.music_on();
+    QFile judge_file("../PIG/buy_sell.txt");
     if(judge_file.exists()==true)
-            QFile::remove("D:/QTcode/PIG/buy_sell.txt");
-    QFile judge_file1("D:/QTcode/PIG/buy_sell.txt");
+            QFile::remove("../PIG/buy_sell.txt");
+    QFile judge_file1("../PIG/buy_sell.txt");
     if(judge_file1.exists()==true)
-            QFile::remove("D:/QTcode/PIG/pig_information.txt");
+            QFile::remove("../PIG/pig_information.txt");
 //    QFile file("D:/QTcode/PIG/buy_sell.txt");
 //    OK=file.open(QIODevice::ReadWrite);
 //    QFile file1("D:/QTcode/PIG/pig_information.txt");
 //    OK=file1.open(QIODevice::ReadWrite);
+    //w.music_on();
     //初始化每个猪圈猪的数量，猪圈标号
         for(int i=0;i<100;i++)
         {

@@ -6,6 +6,7 @@
 
 QT       += core gui
 
+
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
 TARGET = PIG
@@ -38,3 +39,8 @@ RESOURCES += \
 FORMS += \
     subwidget.ui
 CONFIG +=c++11
+QT +=core gui multimedia
+
+DISTFILES += \
+    Waltzing Leaves.wav \
+    Waltzing Leaves.wav

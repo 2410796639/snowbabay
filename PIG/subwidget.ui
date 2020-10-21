@@ -765,7 +765,7 @@
        <item row="1" column="0" colspan="2">
         <widget class="QLabel" name="label_6">
          <property name="text">
-          <string>TextLabel</string>
+          <string/>
          </property>
         </widget>
        </item>
@@ -773,75 +773,7 @@
      </widget>
      <widget class="QWidget" name="page_4">
       <layout class="QGridLayout" name="gridLayout_7">
-       <item row="1" column="1">
-        <widget class="QPushButton" name="pushButton_6">
-         <property name="maximumSize">
-          <size>
-           <width>16777215</width>
-           <height>75</height>
-          </size>
-         </property>
-         <property name="text">
-          <string>更改背景音乐</string>
-         </property>
-        </widget>
-       </item>
-       <item row="3" column="0">
-        <spacer name="horizontalSpacer_9">
-         <property name="orientation">
-          <enum>Qt::Horizontal</enum>
-         </property>
-         <property name="sizeType">
-          <enum>QSizePolicy::Fixed</enum>
-         </property>
-         <property name="sizeHint" stdset="0">
-          <size>
-           <width>200</width>
-           <height>20</height>
-          </size>
-         </property>
-        </spacer>
-       </item>
-       <item row="3" column="1">
-        <widget class="QComboBox" name="comboBox">
-         <property name="maximumSize">
-          <size>
-           <width>16777215</width>
-           <height>75</height>
-          </size>
-         </property>
-        </widget>
-       </item>
-       <item row="3" column="2">
-        <spacer name="horizontalSpacer_10">
-         <property name="orientation">
-          <enum>Qt::Horizontal</enum>
-         </property>
-         <property name="sizeType">
-          <enum>QSizePolicy::Fixed</enum>
-         </property>
-         <property name="sizeHint" stdset="0">
-          <size>
-           <width>200</width>
-           <height>20</height>
-          </size>
-         </property>
-        </spacer>
-       </item>
        <item row="5" column="1">
-        <widget class="QPushButton" name="back3">
-         <property name="maximumSize">
-          <size>
-           <width>16777215</width>
-           <height>75</height>
-          </size>
-         </property>
-         <property name="text">
-          <string>返回</string>
-         </property>
-        </widget>
-       </item>
-       <item row="6" column="1">
         <spacer name="verticalSpacer_7">
          <property name="orientation">
           <enum>Qt::Vertical</enum>
@@ -857,8 +789,21 @@
          </property>
         </spacer>
        </item>
-       <item row="2" column="1">
-        <spacer name="verticalSpacer_9">
+       <item row="4" column="1">
+        <widget class="QPushButton" name="back3">
+         <property name="maximumSize">
+          <size>
+           <width>16777215</width>
+           <height>75</height>
+          </size>
+         </property>
+         <property name="text">
+          <string>返回</string>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="1">
+        <spacer name="verticalSpacer_10">
          <property name="orientation">
           <enum>Qt::Vertical</enum>
          </property>
@@ -889,18 +834,47 @@
          </property>
         </spacer>
        </item>
-       <item row="4" column="1">
-        <spacer name="verticalSpacer_10">
+       <item row="2" column="1">
+        <widget class="QPushButton" name="pushButton_6">
+         <property name="maximumSize">
+          <size>
+           <width>16777215</width>
+           <height>75</height>
+          </size>
+         </property>
+         <property name="text">
+          <string>更改背景音乐</string>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="0">
+        <spacer name="horizontalSpacer_9">
          <property name="orientation">
-          <enum>Qt::Vertical</enum>
+          <enum>Qt::Horizontal</enum>
          </property>
          <property name="sizeType">
-          <enum>QSizePolicy::Preferred</enum>
+          <enum>QSizePolicy::Fixed</enum>
          </property>
          <property name="sizeHint" stdset="0">
           <size>
-           <width>20</width>
-           <height>40</height>
+           <width>200</width>
+           <height>20</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item row="3" column="2">
+        <spacer name="horizontalSpacer_10">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+         <property name="sizeType">
+          <enum>QSizePolicy::Fixed</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>200</width>
+           <height>20</height>
           </size>
          </property>
         </spacer>

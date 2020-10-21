@@ -2,7 +2,8 @@
 #define SUBWIDGET_H
 
 #include <QWidget>
-
+#include <QSound>
+#include <QMediaPlayer>
 namespace Ui {
 class subwidget;
 }
@@ -17,6 +18,9 @@ public:
     void paintEvent(QPaintEvent *);
     void timerEvent(QTimerEvent *);
     void closeEvent(QCloseEvent *e);
+   // QMediaPlayer *startmusic=new QMediaPlayer( QUrl::fromLocalFile(":/new/prefix2/Waltzing Leaves.MP3"),this);
+    void music_on();
+    void music_off();
     int timerID;
     int distribution_weight[8];
     int distribution_day[13];
@@ -30,6 +34,7 @@ public:
     int blackcage;
     int sec=0;
     int badpignumber=0;
+
 
     struct node
     {

@@ -10,4 +10,7 @@
         <file>image/timg (3).jpg</file>
         <file>image/timg (1).jpg</file>
     </qresource>
+    <qresource prefix="/new/prefix2">
+        <file>Waltzing Leaves.mp3</file>
+    </qresource>
 </RCC>

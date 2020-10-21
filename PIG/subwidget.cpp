@@ -16,7 +16,9 @@
 #include <QFile>
 #include <QTextCodec>
 #include <QCloseEvent>
-
+#include <QFileInfo>
+#include <QSound>
+#include <QMediaPlayer>
 
 subwidget::subwidget(QWidget *parent) :
     QWidget(parent),
@@ -29,7 +31,7 @@ subwidget::subwidget(QWidget *parent) :
     connect(ui->pushButton,&QPushButton::clicked,
             [=]()
     {
-        timerID= this->startTimer(100);
+        timerID= this->startTimer(1000);
     });
     //停止时间按钮
     connect(ui->pushButton_2,&QPushButton::clicked,
@@ -223,9 +225,18 @@ subwidget::subwidget(QWidget *parent) :
        ui->page->show();
 
     });
-
-
-
+    //更改背景音乐
+    connect(ui->pushButton_6,&QPushButton::clicked,
+            [=]()
+    {
+        QMessageBox::information(this,"更改背景音乐",QString("未实现"));
+    });
+    //商城控件
+    connect(ui->shop,&QPushButton::clicked,
+            [=]()
+    {
+        QMessageBox::information(this,"商城",QString("未实现"));
+    });
 
 
 }
@@ -584,7 +595,7 @@ void subwidget::timerEvent(QTimerEvent *)
                               .arg(buyf)
                               .arg(buymoney));
          //写入购入与卖出信息到文件中]
-            QFile file("D:/QTcode/PIG/buy_sell.txt");
+            QFile file("../PIG/buy_sell.txt");
 
             bool isOk = file.open(QIODevice::WriteOnly|QIODevice::Append);
             if( isOk==true )
@@ -712,12 +723,12 @@ void subwidget::closeEvent(QCloseEvent *e)
     int ret=QMessageBox::question(this,"关闭","是否需要关闭窗口");
     if(ret==QMessageBox::Yes)
     {
-        QFile file_save("D:/QTcode/PIG/pig_information.txt");
+        QFile file_save("../PIG/pig_information.txt");
 
         bool isok = file_save.open(QIODevice::WriteOnly);
         if(isok==true)
         {
-
+            music_off();
             QTextStream stream(&file_save);
             stream.setCodec(QTextCodec::codecForName("utf-8"));
             //保存运营天数和赚的总金钱
@@ -770,7 +781,7 @@ void subwidget::on_buy_sell_clicked()
 }
 
 
-
+//采取猪瘟防控措施
 void subwidget::on_pushButton_3_clicked()
 {
     for(int i=0;i<100;i++)
@@ -829,4 +840,21 @@ void subwidget::on_pushButton_3_clicked()
             }
         }
     }
+}
+void subwidget::music_on()
+{
+     QMediaPlayer *player = new QMediaPlayer;
+        connect(player, SIGNAL(positionChanged(qint64)), this, SLOT(positionChanged(qint64)));
+        player->setMedia(QUrl::fromLocalFile(":/new/prefix2/Waltzing Leaves.mp3"));
+        player->setVolume(30);
+        player->play();
+    //startmusic->play();
+    //startmusic->setLoops(-1);
+
+}
+void subwidget::music_off()
+{
+
+
+    //startmusic->stop();
 }
